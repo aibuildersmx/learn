@@ -29,7 +29,7 @@ export function Navigation() {
     },
     {
       href: "/getting-started",
-      label: "Getting Started",
+      label: "Get Started",
     },
     {
       href: "/design-library",
