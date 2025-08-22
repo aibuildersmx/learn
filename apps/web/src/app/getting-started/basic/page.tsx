@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -39,17 +38,6 @@ export default function GettingStartedPage() {
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2000);
   };
-
-  const codeBlocks = [
-    {
-      id: 0,
-      code: "git clone https://github.com/benjaminykim/tutorial.git",
-      label: "Clone repository",
-    },
-    { id: 1, code: "cd tutorial", label: "Navigate to project" },
-    { id: 2, code: "pnpm install", label: "Install dependencies" },
-    { id: 3, code: "pnpm dev", label: "Start development server" },
-  ];
 
   return (
     <TooltipProvider>
@@ -603,7 +591,8 @@ export default function GettingStartedPage() {
                     <div className="relative group">
                       <pre className="bg-muted p-3 rounded-lg overflow-x-auto">
                         <code className="text-sm">
-                          git clone https://github.com/aibuildersmx/learn.git
+                          git clone
+                          https://github.com/aibuildersmx/learn-basic.git
                         </code>
                       </pre>
                       <Button
@@ -612,7 +601,7 @@ export default function GettingStartedPage() {
                         className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                         onClick={() =>
                           copyToClipboard(
-                            "git clone https://github.com/benjaminykim/tutorial.git",
+                            "git clone https://github.com/aibuildersmx/learn-basic.git",
                             0
                           )
                         }
@@ -626,7 +615,7 @@ export default function GettingStartedPage() {
                     </div>
                     <p className="text-xs text-muted-foreground">
                       You&apos;ll see Git downloading the files. This creates a
-                      new folder called &ldquo;tutorial&rdquo;
+                      new folder called &ldquo;learn-basic&rdquo;
                     </p>
                   </div>
 
@@ -634,13 +623,13 @@ export default function GettingStartedPage() {
                     <h4 className="font-medium">3. Enter the project folder</h4>
                     <div className="relative group">
                       <pre className="bg-muted p-3 rounded-lg">
-                        <code className="text-sm">cd tutorial</code>
+                        <code className="text-sm">cd learn-basic</code>
                       </pre>
                       <Button
                         variant="ghost"
                         size="sm"
                         className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                        onClick={() => copyToClipboard("cd tutorial", 1)}
+                        onClick={() => copyToClipboard("cd learn-basic", 1)}
                       >
                         {copiedIndex === 1 ? (
                           <CheckCircle2 className="h-4 w-4 text-green-600" />
@@ -687,42 +676,7 @@ export default function GettingStartedPage() {
 
                   <div className="p-4 border rounded-lg space-y-3">
                     <h4 className="font-medium">
-                      5. Set up environment variables
-                    </h4>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Copy the example environment file to create your local
-                      configuration:
-                    </p>
-                    <div className="relative group">
-                      <pre className="bg-muted p-3 rounded-lg">
-                        <code className="text-sm">
-                          cp .env.local.example .env.local
-                        </code>
-                      </pre>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
-                        onClick={() =>
-                          copyToClipboard("cp .env.local.example .env.local", 3)
-                        }
-                      >
-                        {copiedIndex === 3 ? (
-                          <CheckCircle2 className="h-4 w-4 text-green-600" />
-                        ) : (
-                          <Copy className="h-4 w-4" />
-                        )}
-                      </Button>
-                    </div>
-                    <p className="text-xs text-muted-foreground">
-                      This creates a local config file with your app&apos;s
-                      settings
-                    </p>
-                  </div>
-
-                  <div className="p-4 border rounded-lg space-y-3">
-                    <h4 className="font-medium">
-                      6. Start the development server
+                      5. Start the development server
                     </h4>
                     <div className="relative group">
                       <pre className="bg-muted p-3 rounded-lg">
@@ -932,7 +886,7 @@ export default function GettingStartedPage() {
                   <li>
                     1. Open{" "}
                     <code className="text-xs bg-purple-200 dark:bg-purple-800 px-1 rounded">
-                      apps/web/src/app/page.tsx
+                      src/app/page.tsx
                     </code>
                   </li>
                   <li>
@@ -971,30 +925,6 @@ export default function GettingStartedPage() {
                     in your browser to see the running app
                   </p>
                 </div>
-                <div className="p-4 border rounded-lg space-y-2">
-                  <h4 className="font-medium">Key Locations</h4>
-                  <p className="text-sm text-muted-foreground">
-                    •{" "}
-                    <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
-                      apps/web/src/app/page.tsx
-                    </code>{" "}
-                    - Homepage to customize
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    •{" "}
-                    <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
-                      apps/web/src/components
-                    </code>{" "}
-                    - Reusable components
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    •{" "}
-                    <code className="bg-muted px-1.5 py-0.5 rounded text-xs">
-                      /components-test
-                    </code>{" "}
-                    - UI component showcase
-                  </p>
-                </div>
               </div>
             </CardContent>
           </Card>
@@ -1021,7 +951,7 @@ export default function GettingStartedPage() {
                     production-ready database with Supabase and implement secure
                     authentication.
                   </p>
-                  <Link href="/advanced">
+                  <Link href="/getting-started/advanced">
                     <Button className="group">
                       Start Advanced Guide
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

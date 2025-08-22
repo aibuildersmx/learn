@@ -39,6 +39,10 @@ export function Navigation() {
       href: "/examples",
       label: "Examples",
     },
+    {
+      href: "/getting-started/advanced",
+      label: "Advanced Guide",
+    },
   ];
 
   return (

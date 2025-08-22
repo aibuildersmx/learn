@@ -160,7 +160,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 sm:mt-16 max-w-2xl px-4 sm:px-0">
+          <div className="mx-auto mt-12 sm:mt-16 max-w-3xl px-4 sm:px-0">
             <div className="text-center">
               <Github className="mx-auto h-8 w-8 text-muted-foreground" />
               <h2 className="mt-4 text-xl sm:text-2xl font-bold tracking-tight">
@@ -189,6 +189,26 @@ export default function Home() {
                   git clone https://github.com/aibuildersmx/learn.git
                 </code>
               </div>
+            </div>
+            <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://github.com/aibuildersmx/learn-basic"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="gap-2">
+                  <Github className="h-4 w-4" />
+                  View on GitHub
+                </Button>
+              </a>
+              <code className="hidden sm:block rounded bg-muted px-3 py-1 text-sm font-mono line-clamp-1 text-center">
+                git clone https://github.com/aibuildersmx/learn-basic.git
+              </code>
+            </div>
+            <div className="mt-4 sm:hidden">
+              <code className="block rounded bg-muted px-3 py-2 text-xs font-mono break-all line-clamp-1 text-center">
+                git clone https://github.com/aibuildersmx/learn-basic.git
+              </code>
             </div>
           </div>
         </div>
